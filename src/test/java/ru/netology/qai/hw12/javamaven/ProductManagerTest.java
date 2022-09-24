@@ -25,10 +25,10 @@ class ProductManagerTest {
     }
 
     @Test
-    void searchByTrue() {
+    void searchByTrueInProduct() {
 
-        Product[] expected = {book1};
-        Product[] actual = manager.searchBy("Война и мир");
+        Product[] expected = {smartphone1};
+        Product[] actual = manager.searchBy("iPhone");
 
         Assertions.assertArrayEquals(expected, actual);
     }
@@ -42,6 +42,23 @@ class ProductManagerTest {
         Assertions.assertArrayEquals(expected, actual);
     }
 
+    @Test
+    void searchByTrueInBook() {
+
+        Product[] expected = {book1};
+        Product[] actual = manager.searchBy("Толстой");
+
+        Assertions.assertArrayEquals(expected, actual);
+    }
+
+    @Test
+    void searchByTrueInSmartphone() {
+
+        Product[] expected = {smartphone1};
+        Product[] actual = manager.searchBy("Apple");
+
+        Assertions.assertArrayEquals(expected, actual);
+    }
     @Test
     void searchByFalse() {
 
